@@ -1,11 +1,11 @@
 //business logic
 const robogerArray = ['0', 'Beep!', 'Boop!', "Won't you be my neighbor?", '4', '5', '6', '7', '8', '9'];
 
-let roboRead = (input) => {
+let beepBoop = (input) => {
   const inputCheck = input.trim();
   console.log(inputCheck);
   if (inputCheck === '0') {
-    return 0;
+    return robogerArray.slice(0, 1);
   }
   if (inputCheck.includes('3')) {
     return robogerArray.slice(0, 4);
@@ -28,14 +28,17 @@ $(document).ready(function() {
   $('#submission').submit(event => {
     event.preventDefault();
     const userInput = $('#userNumber').val();
-    const output = roboRead(userInput);
+    const output = beepBoop(userInput);
     let strOutput = '';
     output.forEach(index => {
       if(index === userInput) {
-        strOutput += ' ' + index;
+        strOutput += ' ' + index + '.';
         return;
+      } else if (index.includes('!')||(index.includes('?'))) {
+        strOutput += ' ' + index;
+      } else {
+        strOutput += ' ' + index + ',';
       }
-      strOutput += ' ' + index;
     })
     $('.robogerInput').html(strOutput);
   })
