@@ -3,7 +3,6 @@ let robogerArray = [];
 
 let beepBoop = (input) => {
   const inputCheck = input.trim();
-  console.log(inputCheck);
   const inputNum = parseInt(inputCheck);
 
   for (let i = 0; i <= inputNum; i++) {
@@ -16,11 +15,11 @@ let beepBoop = (input) => {
     } else if (i === 2) {
       robogerArray.push('Boop!');
     } else if (i === 3) {
-      robogerArray.push(`Won't you be my neighbor?`);
+      robogerArray.push(`Won't you be my neighbor, ${userName.value}?`);
     } else if (i > 3) {
       robogerArray.push(num);
       if (num.includes(3)) {
-        robogerArray[i] = `Won't you be my neighbor?`;
+        robogerArray[i] = `Won't you be my neighbor, ${userName.value}?`;
       } else if (num.includes(2)) {
         robogerArray[i] = 'Boop!';
       } else if (num.includes(1)) {
@@ -28,7 +27,6 @@ let beepBoop = (input) => {
       }
     }
   }
-  console.log(robogerArray);
   return robogerArray;
 }
 
@@ -37,7 +35,9 @@ let beepBoop = (input) => {
 $(document).ready(function() {
   $('#submission').submit(event => {
     event.preventDefault();
+    const userName = $('#userName').val();
     const userInput = $('#userNumber').val();
+
     let output = beepBoop(userInput);
     let strOutput = '';
     output.forEach(index => {
@@ -50,7 +50,10 @@ $(document).ready(function() {
         strOutput += ' ' + index + ',';
       }
     })
-    $('.robogerInput').html(strOutput);
+    $('.robogerInput').html(`<h3>Roboger responds:</h3>${strOutput}`);
+    let rInput = $('.robogerInput');
+    rInput.fadeIn();
+
     robogerArray = [];//resets the array so it doesn't append onto the page
   }) 
 })
