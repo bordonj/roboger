@@ -1,5 +1,4 @@
 //business logic
-// const robogerArray = ['0', 'Beep!', 'Boop!', "Won't you be my neighbor?"];
 let robogerArray = [];
 
 let beepBoop = (input) => {
@@ -31,27 +30,6 @@ let beepBoop = (input) => {
   }
   console.log(robogerArray);
   return robogerArray;
-
-
-  // if (inputCheck === '0') {
-  //   return robogerArray.slice(0, 1);
-  // }
-  // if (inputCheck.includes('3')) {
-  //   return robogerArray.slice(0, 4);
-  // } else if (inputCheck.includes('2')) {
-  //   return robogerArray.slice(0, 3);
-  // } else if (inputCheck.includes('1')) {
-  //   return robogerArray.slice(0, 2);
-  // } else if (intInputCheck > 3){
-  //     for (let i = 4; i < intInputCheck+1; i++) {
-  //       robogerArray.push(count.toString());
-  //       count++;
-  //     }
-  //   return robogerArray.slice(0, parseInt(inputCheck)+1);
-  // }
-  // for (let i of robogerArray){
-  //   if (i )
-  // }
 }
 
 
