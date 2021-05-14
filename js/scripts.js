@@ -17,9 +17,16 @@ let beepBoop = (input) => {
     } else if (i === 2) {
       robogerArray.push('Boop!');
     } else if (i === 3) {
-      robogerArray.push("Won't you be my neighbor");
+      robogerArray.push(`Won't you be my neighbor?`);
     } else if (i > 3) {
       robogerArray.push(num);
+      if (num.includes(3)) {
+        robogerArray[i] = `Won't you be my neighbor?`;
+      } else if (num.includes(2)) {
+        robogerArray[i] = 'Boop!';
+      } else if (num.includes(1)) {
+        robogerArray[i] = 'Beep!';
+      }
     }
   }
   console.log(robogerArray);
@@ -57,7 +64,7 @@ $(document).ready(function() {
     let strOutput = '';
     output.forEach(index => {
       if(index === userInput) {
-        strOutput += ' ' + index + '.';
+        strOutput += ' ' + index + '.';//for the ending element
         return;
       } else if (index.includes('!')||(index.includes('?'))) {
         strOutput += ' ' + index;
