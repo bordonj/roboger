@@ -1,9 +1,9 @@
 //business logic
-let robogerArray = [];
 
 let beepBoop = (input) => {
   const inputCheck = input.trim();
   const inputNum = parseInt(inputCheck);
+  let robogerArray = [];
 
   for (let i = 0; i <= inputNum; i++) {
     let num = i.toString();
@@ -54,6 +54,5 @@ $(document).ready(function() {
     let rInput = $('.robogerInput');
     rInput.fadeIn();
 
-    robogerArray = [];//resets the array so it doesn't append onto the page
   }) 
 })
